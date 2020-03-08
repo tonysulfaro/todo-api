@@ -1,0 +1,25 @@
+{
+  "name": "api-project",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "nodemon server.js",
+    "build:standard": "standard \"*.js\"",
+    "build": "run-s build:*",
+    "deploy:heroku": "git push heroku master",
+    "deploy": "run-s build:* deploy:heroku"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.5",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "npm-run-all": "^4.1.5",
+    "pg": "^7.18.1",
+    "standard": "^14.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.0",
+    "nodemon": "^1.11.0"
+  },
+  "server": "cross-env DATABASE_URL=postgres://xlqsffmfcdtwwn:9a2e967849f8bb089c9a7b20a4a6b03806521001f9f49a871b2022efc0dcdd97@ec2-184-72-236-57.compute-1.amazonaws.com:5432/d6i3ptnca9u5ud nodemon server.js"
+}
